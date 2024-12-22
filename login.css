@@ -1,0 +1,116 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #42a5f5, #86c5da);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Caja de login */
+.login-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    color: #333;
+    text-align: center;
+}
+
+/* Encabezado */
+.login-box h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #42a5f5;
+}
+
+/* Input y etiquetas */
+.login-box label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Botón */
+.login-box button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background: #42a5f5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+    background: #1e88e5;
+}
+
+/* Texto de registro */
+.register-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.register-text a {
+    color: #1e88e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-messages {
+    margin-bottom: 1rem;
+}
+
+.alert {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.alert.success {
+    background: #4caf50;
+    color: #fff;
+}
+
+.alert.danger {
+    background: #f44336;
+    color: #fff;
+}
+
+.alert.warning {
+    background: #ff9800;
+    color: #fff;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='doctores.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Doctores</h1>
+        <div class="doctores-list">
+            {% for doctor in doctores %}
+            <div class="doctor-card">
+                <h2>{{ doctor.nombre }} {{ doctor.apellido_paterno }} {{ doctor.apellido_materno }}</h2>
+                <p><strong>Especialidad:</strong> {{ doctor.especialidad }}</p>
+                <p><strong>Consultorio:</strong> {{ doctor.consultorio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('dashboard_recepcionista') }}" class="button">Volver al Panel</a>
+    </div>
+</body>
+</html>

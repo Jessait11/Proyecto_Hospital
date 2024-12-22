@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Paciente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil_paciente.css') }}">
+</head>
+<body>
+    <h1>Perfil del Paciente</h1>
+    <div class="perfil-container">
+        <h2>Datos Personales</h2>
+        <p><strong>Nombre:</strong> {{ datos.nombre }} {{ datos.apellido_paterno }} {{ datos.apellido_materno }}</p>
+        <p><strong>Email:</strong> {{ datos.email }}</p>
+        <p><strong>Teléfono:</strong> {{ datos.telefono }}</p>
+        <p><strong>CURP:</strong> {{ datos.curp }}</p>
+
+        <h2>Dirección</h2>
+        <p><strong>Calle:</strong> {{ datos.direccion.calle }} #{{ datos.direccion.numero }}</p>
+        <p><strong>Colonia:</strong> {{ datos.direccion.colonia }}</p>
+        <p><strong>Código Postal:</strong> {{ datos.direccion.codigo_postal }}</p>
+        <p><strong>Ciudad:</strong> {{ datos.direccion.ciudad }}</p>
+        <p><strong>Estado:</strong> {{ datos.direccion.estado }}</p>
+
+        <a href="{{ url_for('dashboard_paciente') }}">Volver al Panel</a>
+    </div>
+</body>
+</html>

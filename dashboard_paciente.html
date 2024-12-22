@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Paciente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_paciente.css') }}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <h1>Bienvenido, Paciente</h1>
+        <p>Tu bienestar es nuestra prioridad</p>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <div class="menu-grid">
+            <!-- Opción: Datos Personales -->
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='imagenes/perfil_icon.jpg') }}" alt="Perfil">
+                <a href="{{ url_for('perfil_paciente') }}">Datos Personales</a>
+            </div>
+
+            <!-- Opción: Agendar Cita -->
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='imagenes/citas_icon.jpg') }}" alt="Citas">
+                <a href="{{ url_for('agendar_cita') }}">Agendar Cita</a>
+            </div>
+
+            <!-- Opción: Pagos -->
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='imagenes/pago_icon.jpg') }}" alt="Pagos">
+                <a href="#">Pagos</a>
+            </div>
+
+            <!-- Opción: Historial de Citas -->
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='imagenes/historial_icon.jpg') }}" alt="Historial">
+                <a href="#">Historial de Citas</a>
+            </div>
+
+            <!-- Opción: Cerrar Sesión -->
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='imagenes/cerrarSesion_icon.jpg') }}" alt="Cerrar Sesión">
+                <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

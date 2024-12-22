@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hospital Salud para Todos - Atención médica de calidad para toda la familia.">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='imagenes/logo_hospital.png') }}" alt="Logo del Hospital">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#especialistas">Especialistas</a></li>
+                <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <main>
+        <section id="inicio" class="banner">
+            <h1>Bienvenido a Hospital para Todos</h1>
+            <p>Tu bienestar, nuestra prioridad.</p>
+            <a href="#servicios" class="btn">Ver Servicios</a>
+        </section>
+
+        <section id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>{{ about_text }}</p>
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <div class="servicios-lista">
+                {% for servicio in servicios %}
+                <article>
+                    <h3>{{ servicio.titulo }}</h3>
+                    <p>{{ servicio.descripcion }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h3>Contacto</h3>
+        <p>Dirección: {{ direccion }}</p>
+        <p>Teléfono: {{ telefono }}</p>
+        <p>Email: {{ email }}</p>
+        <p>&copy; {{ year }} Hospital Salud para Todos.</p>
+    </footer>
+</body>
+</html>

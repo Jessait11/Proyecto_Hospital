@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes Asignados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_doctor.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Pacientes Asignados</h1>
+        <p>Lista de pacientes asignados al doctor.</p>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Motivo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for paciente in pacientes %}
+                <tr>
+                    <td>{{ paciente[0] }}</td>
+                    <td>{{ paciente[1] }}</td>
+                    <td>{{ paciente[2] }}</td>
+                    <td>{{ paciente[3] }}</td>
+                    <td>{{ paciente[4] }}</td>
+                    <td>{{ paciente[5] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

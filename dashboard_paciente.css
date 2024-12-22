@@ -1,0 +1,70 @@
+/* Fondo del encabezado del panel */
+.header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.2em;
+    margin: 5px 0 0 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f6fa;
+}
+
+/* Opciones del menú (tarjetas) */
+.menu-item {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 300px;
+    height: 120px; /* Tamaño fijo para todas las tarjetas */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+    margin: 15px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item img {
+    width: 50px; /* Tamaño uniforme para todas las imágenes */
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Espaciado general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Doctor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_doctor.css') }}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <div class="header">
+        <h1>Bienvenido, Doctor</h1>
+        <p>Tu dedicación hace la diferencia</p>
+    </div>
+
+    <!-- Contenedor de Opciones -->
+    <div class="container">
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='imagenes/datos_personales_icon.png') }}" alt="Datos Personales">
+            <a href="{{ url_for('perfil_doctor') }}">Datos Personales</a>
+        </div>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='imagenes/calendario_icon.png') }}" alt="Calendario">
+            <a href="{{ url_for('calendario_doctor') }}">Calendario</a> 
+
+        </div>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='imagenes/recetas_icon.png') }}" alt="Recetas">
+            <a href="{{ url_for('recetas_doctor') }}">Recetas</a>
+        </div>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='imagenes/pacientes_icon.png') }}" alt="Pacientes Asignados">
+            <a href="{{ url_for('pacientes_asignados_doctor') }}">Pacientes Asignados</a>
+        </div>
+
+        <!-- Botón de Cerrar Sesión -->
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='imagenes/cerrarSesion_icon.jpg') }}" alt="Cerrar Sesión">
+            <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>

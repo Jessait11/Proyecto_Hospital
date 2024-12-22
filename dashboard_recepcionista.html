@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Recepcionista</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_recepcionista.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <h3>Recepcionista:</h3>
+            <p>{{ recepcionista.nombre }} {{ recepcionista.apellido_paterno }} {{ recepcionista.apellido_materno }}</p>
+            <p>ID: {{ recepcionista.id }}</p>
+        </div>
+        <div class="datetime">
+            <p>Fecha: <span id="current-date"></span></p>
+            <p>Hora: <span id="current-time"></span></p>
+        </div>
+        <ul class="menu">
+            <li><a href="{{ url_for('farmacia') }}">Farmacia</a></li>
+            <li><a href="{{ url_for('cobro') }}">Cobro</a></li>
+            <li><a href="{{ url_for('historial_paciente') }}">Historial Paciente</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="header">
+            <h1>Bienvenid@, {{ recepcionista.nombre }} {{ recepcionista.apellido_paterno }}</h1>
+            <p>ID: {{ recepcionista.id }}</p>
+        </div>
+        <div class="options">
+            <a class="button" href="{{ url_for('doctores') }}">Doctores</a>
+            <a class="button" href="{{ url_for('pacientes') }}">Pacientes</a>
+            <a class="button" href="{{ url_for('citas') }}">Citas</a>
+            <a class="button" href="{{ url_for('consultorios') }}">Consultorios</a>
+            <a class="button" href="{{ url_for('agregar_empleado') }}">Agregar Empleado</a>
+            <div class="logout-container">
+                <a href="{{ url_for('logout') }}" class="logout-button">Cerrar Sesión</a>
+            </div>            
+        </div>
+    </div>
+    <script>
+        // Mostrar fecha y hora actual
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('current-date').innerText = now.toLocaleDateString();
+            document.getElementById('current-time').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>

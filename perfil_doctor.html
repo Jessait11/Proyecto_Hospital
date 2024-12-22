@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Doctor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil_doctor.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil del Doctor</h1>
+        <div class="perfil">
+            <h2>Datos Personales</h2>
+            <p><strong>Nombre:</strong> {{ perfil.nombre }} {{ perfil.apellido_paterno }} {{ perfil.apellido_materno }}</p>
+            <p><strong>Correo Electrónico:</strong> {{ perfil.email }}</p>
+            <p><strong>Teléfono:</strong> {{ perfil.telefono }}</p>
+            <p><strong>CURP:</strong> {{ perfil.curp }}</p>
+
+            <h2>Dirección</h2>
+            <p><strong>Calle:</strong> {{ perfil.direccion.calle }}</p>
+            <p><strong>Número:</strong> {{ perfil.direccion.numero }}</p>
+            <p><strong>Colonia:</strong> {{ perfil.direccion.colonia }}</p>
+            <p><strong>Código Postal:</strong> {{ perfil.direccion.codigo_postal }}</p>
+            <p><strong>Ciudad:</strong> {{ perfil.direccion.ciudad }}</p>
+            <p><strong>Estado:</strong> {{ perfil.direccion.estado }}</p>
+
+            <h2>Datos Profesionales</h2>
+            <p><strong>Especialidad:</strong> {{ perfil.especialidad }}</p>
+            <p><strong>Consultorio:</strong> {{ perfil.consultorio }}</p>
+        </div>
+        <a href="{{ url_for('dashboard_doctor') }}" class="btn">Regresar al Dashboard</a>
+    </div>
+</body>
+</html>
